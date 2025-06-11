@@ -1,8 +1,16 @@
-// Task ZM
-function reverseInteger(input: number): number {
-	return parseInt(input.toString().split('').reverse().join(''));
+// Task ZL
+function stringToKebab(input: string) {
+	return input
+		.split(' ')
+		.map((word) => word.toLowerCase())
+		.join('_');
 }
-console.log(reverseInteger(123456789));
+console.log(stringToKebab('I love Kebab'));
+// Task ZM
+// function reverseInteger(input: number): number {
+// 	return parseInt(input.toString().split('').reverse().join(''));
+// }
+// console.log(reverseInteger(123456789));
 // Task ZK
 // function printNumbers(): void {
 // 	let count = 1;
