@@ -1,11 +1,17 @@
-// Task ZL
-function stringToKebab(input: string) {
-	return input
-		.split(' ')
-		.map((word) => word.toLowerCase())
-		.join('_');
+// Task ZN
+function rotateArray(arr: number[], num: number): number[] {
+	const arr1 = arr.splice(0, num + 1);
+	return arr.concat(arr1);
 }
-console.log(stringToKebab('I love Kebab'));
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+// Task ZL
+// function stringToKebab(input: string) {
+// 	return input
+// 		.split(' ')
+// 		.map((word) => word.toLowerCase())
+// 		.join('_');
+// }
+// console.log(stringToKebab('I love Kebab'));
 // Task ZM
 // function reverseInteger(input: number): number {
 // 	return parseInt(input.toString().split('').reverse().join(''));
