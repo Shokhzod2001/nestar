@@ -80,4 +80,5 @@ export class Member {
 
 	@Field(() => String, { nullable: true })
 	accessToken?: string;
+	static MemberType: any;
 }
