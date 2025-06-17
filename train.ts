@@ -1,9 +1,30 @@
-// Task ZN
-function rotateArray(arr: number[], num: number): number[] {
-	const arr1 = arr.splice(0, num + 1);
-	return arr.concat(arr1);
+// Task ZO
+function areParenthesesBalanced(str: string): boolean {
+	let openCount: number = 0;
+	let closeCount: number = 0;
+
+	for (let i: number = 0; i < str.length; i++) {
+		if (str[i] === '(') {
+			openCount++;
+		} else if (str[i] === ')') {
+			closeCount++;
+
+			if (closeCount > openCount) {
+				return false;
+			}
+		}
+	}
+
+	return openCount === closeCount;
 }
-console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+
+console.log(areParenthesesBalanced('string()ichida(qavslar)soni()balansda'));
+// Task ZN
+// function rotateArray(arr: number[], num: number): number[] {
+// 	const arr1 = arr.splice(0, num + 1);
+// 	return arr.concat(arr1);
+// }
+// console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
 // Task ZL
 // function stringToKebab(input: string) {
 // 	return input
