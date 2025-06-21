@@ -1,24 +1,33 @@
-// Task ZO
-function areParenthesesBalanced(str: string): boolean {
-	let openCount: number = 0;
-	let closeCount: number = 0;
-
-	for (let i: number = 0; i < str.length; i++) {
-		if (str[i] === '(') {
-			openCount++;
-		} else if (str[i] === ')') {
-			closeCount++;
-
-			if (closeCount > openCount) {
-				return false;
-			}
-		}
-	}
-
-	return openCount === closeCount;
+// Task ZP
+function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+	return arr1.every((elem) => arr2.includes(elem)) && arr2.every((elem) => arr1.includes(elem));
 }
 
-console.log(areParenthesesBalanced('string()ichida(qavslar)soni()balansda'));
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
+
+// Task ZO
+// function areParenthesesBalanced(str: string): boolean {
+// 	let openCount: number = 0;
+// 	let closeCount: number = 0;
+
+// 	for (let i: number = 0; i < str.length; i++) {
+// 		if (str[i] === '(') {
+// 			openCount++;
+// 		} else if (str[i] === ')') {
+// 			closeCount++;
+
+// 			if (closeCount > openCount) {
+// 				return false;
+// 			}
+// 		}
+// 	}
+
+// 	return openCount === closeCount;
+// }
+
+// console.log(areParenthesesBalanced('string()ichida(qavslar)soni()balansda'));
 // Task ZN
 // function rotateArray(arr: number[], num: number): number[] {
 // 	const arr1 = arr.splice(0, num + 1);
