@@ -1,11 +1,18 @@
-// Task ZP
-function areArraysEqual(arr1: number[], arr2: number[]): boolean {
-	return arr1.every((elem) => arr2.includes(elem)) && arr2.every((elem) => arr1.includes(elem));
+// Task ZQ
+function findDuplicates(arr: number[]) {
+	return arr
+		.filter((num, index) => arr.indexOf(num) !== index)
+		.filter((num, index, self) => self.indexOf(num) === index);
 }
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+// Task ZP
+// function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+// 	return arr1.every((elem) => arr2.includes(elem)) && arr2.every((elem) => arr1.includes(elem));
+// }
 
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));
-console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));
+// console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
 
 // Task ZO
 // function areParenthesesBalanced(str: string): boolean {
