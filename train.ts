@@ -1,10 +1,32 @@
-// Task ZQ
-function findDuplicates(arr: number[]) {
-	return arr
-		.filter((num, index) => arr.indexOf(num) !== index)
-		.filter((num, index, self) => self.indexOf(num) === index);
+// TASK ZR
+function countNumberAndLetters(str: string): { number: number; letter: number } {
+	let numberCount = 0;
+	let letterCount = 0;
+
+	for (let i = 0; i < str.length; i++) {
+		const char = str[i];
+
+		if (char >= '0' && char <= '9') {
+			numberCount++;
+		} else if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+			letterCount++;
+		}
+	}
+
+	return {
+		number: numberCount,
+		letter: letterCount,
+	};
 }
-console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+
+console.log(countNumberAndLetters('string152%\¥'));
+// Task ZQ
+// function findDuplicates(arr: number[]) {
+// 	return arr
+// 		.filter((num, index) => arr.indexOf(num) !== index)
+// 		.filter((num, index, self) => self.indexOf(num) === index);
+// }
+// console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
 // Task ZP
 // function areArraysEqual(arr1: number[], arr2: number[]): boolean {
 // 	return arr1.every((elem) => arr2.includes(elem)) && arr2.every((elem) => arr1.includes(elem));
