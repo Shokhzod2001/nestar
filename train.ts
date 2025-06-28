@@ -1,25 +1,30 @@
-// TASK ZR
-function countNumberAndLetters(str: string): { number: number; letter: number } {
-	let numberCount = 0;
-	let letterCount = 0;
-
-	for (let i = 0; i < str.length; i++) {
-		const char = str[i];
-
-		if (char >= '0' && char <= '9') {
-			numberCount++;
-		} else if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
-			letterCount++;
-		}
-	}
-
-	return {
-		number: numberCount,
-		letter: letterCount,
-	};
+// TASK ZS
+function singleNumber(arr: number[]): number {
+	return arr.filter((num) => arr.indexOf(num) === arr.lastIndexOf(num))[0];
 }
+console.log(singleNumber([4, 2, 1, 2, 1]));
+// TASK ZR
+// function countNumberAndLetters(str: string): { number: number; letter: number } {
+// 	let numberCount = 0;
+// 	let letterCount = 0;
 
-console.log(countNumberAndLetters('string152%\¥'));
+// 	for (let i = 0; i < str.length; i++) {
+// 		const char = str[i];
+
+// 		if (char >= '0' && char <= '9') {
+// 			numberCount++;
+// 		} else if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+// 			letterCount++;
+// 		}
+// 	}
+
+// 	return {
+// 		number: numberCount,
+// 		letter: letterCount,
+// 	};
+// }
+
+// console.log(countNumberAndLetters('string152%\¥'));
 // Task ZQ
 // function findDuplicates(arr: number[]) {
 // 	return arr
