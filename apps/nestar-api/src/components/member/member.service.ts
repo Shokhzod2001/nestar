@@ -97,7 +97,7 @@ export class MemberService {
 
 	private async checkSubscription(followerId: ObjectId, followingId: ObjectId): Promise<MeFollowed[]> {
 		const result = await this.followModel.findOne({ followingId: followingId, followerId: followerId }).exec();
-		return result ? [{ followerId: followerId, followingId: followerId, myFollowing: true }] : [];
+		return result ? [{ followerId: followerId, followingId: followingId, myFollowing: true }] : [];
 	}
 
 	public async getAgents(memberId: ObjectId, input: AgentsInquiry): Promise<Members> {
