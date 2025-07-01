@@ -1,8 +1,28 @@
-// TASK ZS
-function singleNumber(arr: number[]): number {
-	return arr.filter((num) => arr.indexOf(num) === arr.lastIndexOf(num))[0];
+// TASK ZT
+import { T } from 'apps/nestar-api/src/libs/types/common';
+
+function firstUniqueCharIndex(str: string): number {
+	const charCount: T = {};
+
+	for (let i = 0; i < str.length; i++) {
+		const char = str[i];
+		charCount[char] = (charCount[char] || 0) + 1;
+	}
+
+	for (let i = 0; i < str.length; i++) {
+		if (charCount[str[i]] === 1) {
+			return i;
+		}
+	}
+
+	return -1;
 }
-console.log(singleNumber([4, 2, 1, 2, 1]));
+console.log(firstUniqueCharIndex('stamp'));
+// TASK ZS
+// function singleNumber(arr: number[]): number {
+// 	return arr.filter((num) => arr.indexOf(num) === arr.lastIndexOf(num))[0];
+// }
+// console.log(singleNumber([4, 2, 1, 2, 1]));
 // TASK ZR
 // function countNumberAndLetters(str: string): { number: number; letter: number } {
 // 	let numberCount = 0;
