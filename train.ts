@@ -1,23 +1,34 @@
-// TASK ZT
-import { T } from 'apps/nestar-api/src/libs/types/common';
-
-function firstUniqueCharIndex(str: string): number {
-	const charCount: T = {};
-
-	for (let i = 0; i < str.length; i++) {
-		const char = str[i];
-		charCount[char] = (charCount[char] || 0) + 1;
-	}
-
-	for (let i = 0; i < str.length; i++) {
-		if (charCount[str[i]] === 1) {
-			return i;
+// TASK ZU
+function sumOfUnique(arr: number[]): number {
+	let result = 0;
+	arr.filter((num) => {
+		if (arr.indexOf(num) === arr.lastIndexOf(num)) {
+			result += num;
 		}
-	}
-
-	return -1;
+	});
+	return result;
 }
-console.log(firstUniqueCharIndex('stamp'));
+console.log(sumOfUnique([1, 2, 3, 2]));
+// TASK ZT
+// import { T } from 'apps/nestar-api/src/libs/types/common';
+
+// function firstUniqueCharIndex(str: string): number {
+// 	const charCount: T = {};
+
+// 	for (let i = 0; i < str.length; i++) {
+// 		const char = str[i];
+// 		charCount[char] = (charCount[char] || 0) + 1;
+// 	}
+
+// 	for (let i = 0; i < str.length; i++) {
+// 		if (charCount[str[i]] === 1) {
+// 			return i;
+// 		}
+// 	}
+
+// 	return -1;
+// }
+// console.log(firstUniqueCharIndex('stamp'));
 // TASK ZS
 // function singleNumber(arr: number[]): number {
 // 	return arr.filter((num) => arr.indexOf(num) === arr.lastIndexOf(num))[0];
